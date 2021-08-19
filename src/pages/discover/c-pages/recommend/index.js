@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 
-import HYTopBanner from './c-cpns/top-banner';
-import HYHotRecommend from './c-cpns/hot-recommend';
-import HYNewAlbum from './c-cpns/new-album';
-import HYRankingList from './c-cpns/ranking-list';
-import HYUserLogin from './c-cpns/user-login';
-import HYSettleSinger from './c-cpns/settle-singer';
-import HYHotRadio from './c-cpns/hot-radio';
+import MHTopBanner from './c-cpns/top-banner';
+import MHHotRecommend from './c-cpns/hot-recommend';
+import MHNewAlbum from './c-cpns/new-album';
+import MHRankingList from './c-cpns/ranking-list';
+import MHUserLogin from './c-cpns/user-login';
+import MHSettleSinger from './c-cpns/settle-singer';
+import MHHotRadio from './c-cpns/hot-radio';
 import {
   RecommendWraper,
   Content,
@@ -14,20 +14,20 @@ import {
   RecommendRight
 } from "./style";
 
-export default memo(function HYRecommend() {
+export default memo(function MHRecommend() {
   return (
     <RecommendWraper>
-      <HYTopBanner/>
+      <MHTopBanner/>
       <Content className="wrap-v2">
         <RecommendLeft>
-          <HYHotRecommend />
-          <HYNewAlbum />
-          <HYRankingList />
+          <MHHotRecommend />
+          <MHNewAlbum />
+          <MHRankingList />
         </RecommendLeft>
         <RecommendRight>
-          <HYUserLogin />
-          <HYSettleSinger />
-          <HYHotRadio />
+          <MHUserLogin />
+          <MHSettleSinger />
+          <MHHotRadio />
         </RecommendRight>
       </Content>
     </RecommendWraper>

@@ -3,10 +3,10 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import { getSimiSongAction } from '../../store/actionCreators';
 
-import HYThemeHeaderPlayer from '@/components/theme-header-player';
+import MHThemeHeaderPlayer from '@/components/theme-header-player';
 import { RelevantWrapper } from './style';
 
-export default memo(function HYRelevant() {
+export default memo(function MHRelevant() {
   const { simiSongs } = useSelector(state => ({
     simiSongs: state.getIn(["player", "simiSongs"])
   }), shallowEqual);
@@ -18,7 +18,7 @@ export default memo(function HYRelevant() {
 
   return (
     <RelevantWrapper>
-      <HYThemeHeaderPlayer title="相似歌曲" />
+      <MHThemeHeaderPlayer title="相似歌曲" />
       <div className="songs">
         {
           simiSongs.map((item, index) => {

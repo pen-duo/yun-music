@@ -6,7 +6,7 @@ import {
   CoverWrapper
 } from "./style"
 
-export default memo(function HYRadioRankingCover(props) {
+export default memo(function MHRadioRankingCover(props) {
   const { radio } = props;
 
   return (

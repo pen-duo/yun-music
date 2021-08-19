@@ -5,24 +5,24 @@ import {
   HeaderWrapper
 } from "./style";
 
-const HYThemeHeaderSmall = memo(function (props) {
+const MHThemeHeaderSmall = memo(function (props) {
   const { title, more } = props;
 
   return (
     <HeaderWrapper>
       <h3>{title}</h3>
-      <a href="/abc">{more}</a>
+      <a href="/#">{more}</a>
     </HeaderWrapper>
   )
 })
 
-HYThemeHeaderSmall.defaultProps = {
+MHThemeHeaderSmall.defaultProps = {
 
 }
 
-HYThemeHeaderSmall.propTypes = {
+MHThemeHeaderSmall.propTypes = {
   title: PropTypes.string.isRequired,
   more: PropTypes.string
 }
 
-export default HYThemeHeaderSmall;
+export default MHThemeHeaderSmall;

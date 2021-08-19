@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
 
-import HYArtistCategory from './c-cpns/artist-category';
-import HYArtistList from './c-cpns/artist-list';
-import { HYArtistWrapper } from './style';
+import MHArtistCategory from './c-cpns/artist-category';
+import MHArtistList from './c-cpns/artist-list';
+import { MHArtistWrapper } from './style';
 
-export default memo(function HYArtist() {
+export default memo(function MHArtist() {
   return (
-    <HYArtistWrapper>
+    <MHArtistWrapper>
       <div className="content wrap-v2">
-        <HYArtistCategory/>
-        <HYArtistList/>
+        <MHArtistCategory/>
+        <MHArtistList/>
       </div>
-    </HYArtistWrapper>
+    </MHArtistWrapper>
   )
 })

@@ -6,7 +6,7 @@ import {
   HeaderWrapper
 } from "./style";
 
-const HYThemeHeaderRCM = memo(function(props) {
+const MHThemeHeaderRCM = memo(function(props) {
   const { title, keywords, moreLink, keywordClick } = props;
 
   return (
@@ -34,13 +34,13 @@ const HYThemeHeaderRCM = memo(function(props) {
   )
 })
 
-HYThemeHeaderRCM.defaultProps = {
+MHThemeHeaderRCM.defaultProps = {
   keywords: []
 }
 
-HYThemeHeaderRCM.propTypes = {
+MHThemeHeaderRCM.propTypes = {
   title: PropTypes.string.isRequired,
   keywords: PropTypes.array
 }
 
-export default HYThemeHeaderRCM;
+export default MHThemeHeaderRCM;

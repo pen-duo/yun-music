@@ -3,13 +3,13 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import { getHotAlbumsAction } from '../../store/actionCreators';
 
-import HYAlbumCover from '@/components/album-cover';
-import HYThemHeaderNormal from '@/components/theme-header-normal';
+import MHAlbumCover from '@/components/album-cover';
+import MHThemHeaderNormal from '@/components/theme-header-normal';
 import {
   HotAlbumWrapper
 } from './style';
 
-export default memo(function HYHotAlbum() {
+export default memo(function MHHotAlbum() {
 
   const { hotAlbums } = useSelector(state => ({
     hotAlbums: state.getIn(["album", "hotAlbums"])
@@ -22,15 +22,15 @@ export default memo(function HYHotAlbum() {
 
   return (
     <HotAlbumWrapper>
-      <HYThemHeaderNormal title="热门新碟" />
+      <MHThemHeaderNormal title="热门新碟" />
       <div className="album-list">
         {
           hotAlbums.slice(0, 10).map((item, index) => {
-            return <HYAlbumCover size={"130px"} 
-                                 width={"153px"} 
-                                 bgp={"-845px"}
-                                 key={item.id} 
-                                 info={item}/>
+            return <MHAlbumCover size={"130px"}
+              width={"153px"}
+              bgp={"-845px"}
+              key={item.id}
+              info={item} />
           })
         }
       </div>

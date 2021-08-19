@@ -9,9 +9,8 @@ import {
   ThemeCoverWrapper
 } from "./style";
 
-export default memo(function HYThemeCover(props) {
+export default memo(function MHThemeCover(props) {
   const { info, right } = props;
-
   return (
     <ThemeCoverWrapper right={right}>
       <div className="cover-top">
@@ -30,7 +29,7 @@ export default memo(function HYThemeCover(props) {
         {info.name}
       </div>
       <div className="cover-source">
-        by {info.copywriter || info.creator.nickname}
+        by {info.copywriter || "热门推荐"}
       </div>
     </ThemeCoverWrapper>
   )

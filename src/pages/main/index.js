@@ -4,19 +4,19 @@ import { renderRoutes } from "react-router-config";
 
 import routes from "@/router"
 
-import HYAppHeader from '@/components/app-header';
-import HYAppFooter from '@/components/app-footer';
-import HYAppPlayBar from '@/pages/player/app-play-bar';
+import MHAppHeader from '@/components/app-header';
+import MHAppFooter from '@/components/app-footer';
+import MHAppPlayBar from '@/pages/player/app-play-bar';
 
-export default memo(function HYMain() {
+export default memo(function MHMain() {
   return (
     <HashRouter>
-      <HYAppHeader />
+      <MHAppHeader />
       <Suspense fallback={<div>loading</div>}>
         {renderRoutes(routes)}
       </Suspense>
-      <HYAppFooter />
-      <HYAppPlayBar/>
+      <MHAppFooter />
+      <MHAppPlayBar/>
     </HashRouter>
   )
 })

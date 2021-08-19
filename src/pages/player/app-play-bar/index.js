@@ -4,14 +4,14 @@ import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { message } from 'antd';
 
 import { getPlayUrl, formatMinuteSecond } from '@/utils/format-utils';
-import { 
-  getSongDetailAction, 
+import {
+  getSongDetailAction,
   changeCurrentLyricIndexAction,
   changePlaySequenceAction,
-  changePlaySongAction 
+  changePlaySongAction
 } from '../store/actionCreators';
 
-import HYAppPlayPanel from '../app-play-panel'
+import MHAppPlayPanel from '../app-play-panel'
 import { NavLink } from 'react-router-dom';
 import { Slider } from 'antd';
 import {
@@ -21,7 +21,7 @@ import {
   Operator
 } from './style';
 
-export default memo(function HYAppPlaybar() {
+export default memo(function MHAppPlaybar() {
   // props and state
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -76,7 +76,6 @@ export default memo(function HYAppPlaybar() {
       setCurrentTime(currentTime);
       setProgress((currentTime * 1000) / duration * 100);
     }
-
     let lrcLength = currentLyrics.length;
     let i = 0;
     for (; i < lrcLength; i++) {
@@ -85,6 +84,7 @@ export default memo(function HYAppPlaybar() {
         break
       }
     }
+
     const finalIndex = i - 1;
     if (finalIndex !== currentLyricIndex) {
       dispatch(changeCurrentLyricIndexAction(finalIndex));
@@ -111,6 +111,7 @@ export default memo(function HYAppPlaybar() {
     const time = value / 100.0 * duration / 1000;
     setCurrentTime(time);
     setIsChanging(true);
+
   }, [duration])
 
   const sliderAfterChange = useCallback((value) => {
@@ -128,11 +129,11 @@ export default memo(function HYAppPlaybar() {
     <PlaybarWrapper className="sprite_playbar">
       <div className="content wrap-v2">
         <Control isPlaying={isPlaying}>
-          <button className="sprite_playbar btn prev" 
-                  onClick={e => dispatch(changePlaySongAction(-1))}></button>
+          <button className="sprite_playbar btn prev"
+            onClick={e => dispatch(changePlaySongAction(-1))}></button>
           <button className="sprite_playbar btn play" onClick={e => play()}></button>
-          <button className="sprite_playbar btn next" 
-                  onClick={e => dispatch(changePlaySongAction(1))}></button>
+          <button className="sprite_playbar btn next"
+            onClick={e => dispatch(changePlaySongAction(1))}></button>
         </Control>
         <PlayInfo>
           <div className="image">
@@ -162,17 +163,17 @@ export default memo(function HYAppPlaybar() {
           </div>
           <div className="right sprite_playbar">
             <button className="sprite_playbar btn volume"></button>
-            <button className="sprite_playbar btn loop" 
-                    onClick={e => dispatch(changePlaySequenceAction(playSequence+1))}></button>
-            <button className="sprite_playbar btn playlist" 
-                    onClick={e => setShowPanel(!showPanel)}>
+            <button className="sprite_playbar btn loop"
+              onClick={e => dispatch(changePlaySequenceAction(playSequence + 1))}></button>
+            <button className="sprite_playbar btn playlist"
+              onClick={e => setShowPanel(!showPanel)}>
               {playList.length}
             </button>
           </div>
         </Operator>
       </div>
-      <audio ref={audioRef} onTimeUpdate={timeUpdate} onEnded={timeEnded}/>
-      {showPanel && <HYAppPlayPanel />}
+      <audio ref={audioRef} onTimeUpdate={timeUpdate} onEnded={timeEnded} />
+      {showPanel && <MHAppPlayPanel />}
     </PlaybarWrapper>
   )
 })

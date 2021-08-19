@@ -8,12 +8,12 @@ import {
   getSizeImage
 } from "@/utils/format-utils";
 
-import HYThemeHeaderSmall from '@/components/theme-header-small';
+import MHThemeHeaderSmall from '@/components/theme-header-small';
 import {
   SetterSongerWrapper
 } from "./style";
 
-export default memo(function HYSettleSinger() {
+export default memo(function MHSettleSinger() {
   // redux
   const dispatch = useDispatch();
   const state = useSelector((state) => ({
@@ -27,7 +27,7 @@ export default memo(function HYSettleSinger() {
 
   return (
     <SetterSongerWrapper>
-      <HYThemeHeaderSmall title="入驻歌手" more="查看全部>" />
+      <MHThemeHeaderSmall title="入驻歌手" more="查看全部>" />
       <div className="singer-list">
         {
           state.settleSings.map((item, index) => {
@@ -44,7 +44,7 @@ export default memo(function HYSettleSinger() {
         }
       </div>
       <div className="apply-for">
-        <a href="/abc">申请成为网易音乐人</a>
+        <a href="/#">申请成为网易音乐人</a>
       </div>
     </SetterSongerWrapper>
   )

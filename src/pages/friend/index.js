@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 import { FriendWrapper } from './style';
 
-export default memo(function HYFriend() {
+export default memo(function MHFriend() {
   return (
     <FriendWrapper>
       <div className="content wrap-v2">

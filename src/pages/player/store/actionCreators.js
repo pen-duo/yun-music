@@ -60,7 +60,7 @@ export const changePlaySongAction = (tag) => {
         break;
       default:
         currentSongIndex += tag;
-        if (currentSongIndex === playList.length) currentSongIndex = 0; 
+        if (currentSongIndex === playList.length) currentSongIndex = 0;
         if (currentSongIndex === -1) currentSongIndex = playList.length - 1;
     }
 

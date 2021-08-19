@@ -6,13 +6,13 @@ import {
 } from "../../store/actionCreators";
 
 import { Carousel } from 'antd';
-import HYThemeHeaderRCM from '@/components/theme-header-rcm';
-import HYAlbumCover from "@/components/album-cover";
+import MHThemeHeaderRCM from '@/components/theme-header-rcm';
+import MHAlbumCover from "@/components/album-cover";
 import {
   AlbumWrapper
 } from "./style";
 
-export default memo(function HYNewAlbum(props) {
+export default memo(function MHNewAlbum(props) {
   // redux
   const state = useSelector(state => ({
     newAlbum: state.getIn(["recommend", "newAlbum"])
@@ -27,10 +27,10 @@ export default memo(function HYNewAlbum(props) {
 
   return (
     <AlbumWrapper>
-      <HYThemeHeaderRCM title="新碟上架" moreLink="/discover/album"/>
+      <MHThemeHeaderRCM title="新碟上架" moreLink="/discover/album" />
       <div className="content">
-        <div className="arrow arrow-left sprite_02" 
-            onClick={e => carouselRef.current.prev()}></div>
+        <div className="arrow arrow-left sprite_02"
+          onClick={e => carouselRef.current.prev()}></div>
         <div className="album">
           <Carousel ref={carouselRef} dots={false}>
             {
@@ -38,9 +38,9 @@ export default memo(function HYNewAlbum(props) {
                 return (
                   <div key={item} className="page">
                     {
-                      state.newAlbum.slice(item*5, (item+1)*5).map(item => {
+                      state.newAlbum.slice(item * 5, (item + 1) * 5).map(item => {
                         return (
-                          <HYAlbumCover key={item.id} info={item}/>
+                          <MHAlbumCover key={item.id} info={item} />
                         )
                       })
                     }
@@ -51,7 +51,7 @@ export default memo(function HYNewAlbum(props) {
           </Carousel>
         </div>
         <div className="arrow arrow-right sprite_02"
-             onClick={e => carouselRef.current.next()}></div>
+          onClick={e => carouselRef.current.next()}></div>
       </div>
     </AlbumWrapper>
   )

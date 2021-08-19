@@ -2,19 +2,19 @@ import React, { useEffect, memo } from 'react';
 import { useDispatch } from "react-redux";
 import { useLocation } from 'react-router-dom';
 
-import { 
+import {
   getCategory,
   getSongList,
   changeCurrentCategoryAction
 } from "./store/actionCreators";
 
-import HYSongsHeader from "./c-cpns/songs-header";
-import HYSongsList from './c-cpns/songs-list';
+import MHSongsHeader from "./c-cpns/songs-header";
+import MHSongsList from './c-cpns/songs-list';
 import {
   SongsWrapper
 } from "./style"
 
-export default memo(function HYSongs() {
+export default memo(function MHSongs() {
   // redux
   const dispatch = useDispatch();
   const cat = useLocation().cat;
@@ -31,8 +31,8 @@ export default memo(function HYSongs() {
 
   return (
     <SongsWrapper className="wrap-v2">
-      <HYSongsHeader/>
-      <HYSongsList/>
+      <MHSongsHeader />
+      <MHSongsList />
     </SongsWrapper>
   )
 })

@@ -6,7 +6,7 @@ import {
 } from "./style"
 import { memo } from 'react';
 
-export default memo(function HYThemeHeaderSong() {
+export default memo(function MHThemeHeaderSong() {
   // redux
   const state = useSelector(state => ({
     playList: state.getIn(["ranking", "playList"])

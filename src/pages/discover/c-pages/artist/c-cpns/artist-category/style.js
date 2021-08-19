@@ -53,4 +53,5 @@ export const CategoryItem = styled.div`
     &:hover {
       text-decoration: underline;
     }
+  }
 `

@@ -9,12 +9,10 @@ export function handleSongsCategory(data) {
       subs: []
     }
   })
-
   // 3.将subs添加到对应的类别中
   for (let item of data.sub) {
     categoryData[item.category].subs.push(item);
   }
-
   return categoryData;
 }
 
@@ -22,7 +20,7 @@ export function handleSongsCategory(data) {
 export function generateSingerAlpha() {
   var alphabets = ["-1"];
   var start = 'A'.charCodeAt(0);
-  var last  = 'Z'.charCodeAt(0);
+  var last = 'Z'.charCodeAt(0);
   for (var i = start; i <= last; ++i) {
     alphabets.push(String.fromCharCode(i));
   }

@@ -3,16 +3,16 @@ import { useDispatch } from "react-redux";
 
 import { getTops } from "./store/actionCreators";
 
-import HYTopRanking from "./c-cpns/top-ranking";
-import HYRankingHeader from './c-cpns/ranking-header';
-import HYRankingList from './c-cpns/ranking-list';
+import MHTopRanking from "./c-cpns/top-ranking";
+import MHRankingHeader from './c-cpns/ranking-header';
+import MHRankingList from './c-cpns/ranking-list';
 import {
   RankingWrapper,
   RankingLeft,
   RankingRight,
 } from "./style";
 
-export default memo(function HYRanking() {
+export default memo(function MHRanking() {
   // redux
   const dispatch = useDispatch();
 
@@ -24,11 +24,11 @@ export default memo(function HYRanking() {
   return (
     <RankingWrapper className="wrap-v2">
       <RankingLeft>
-        <HYTopRanking/>
+        <MHTopRanking/>
       </RankingLeft>
       <RankingRight>
-        <HYRankingHeader/>
-        <HYRankingList/>
+        <MHRankingHeader/>
+        <MHRankingList/>
       </RankingRight>
     </RankingWrapper>
   )

@@ -31,8 +31,8 @@ export default function request(option) {
 			return response.data
 		}, err => {
 			console.log('来到了response拦截failure中');
-      console.log(err);
-      if (err && err.response) {
+			console.log(err);
+			if (err && err.response) {
 				switch (err.response.status) {
 					case 400:
 						err.message = '请求错误'
